@@ -1,0 +1,13 @@
+module Y
+  module Redis
+    module Config
+      module Option
+        def self.extended: -> untyped
+
+        def option: -> void
+      end
+
+      def self.builder_class: -> AbstractBuilder
+    end
+  end
+end

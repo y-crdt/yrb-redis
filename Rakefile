@@ -1,12 +1,34 @@
 # frozen_string_literal: true
 
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+begin
+  require "rspec/core"
+  require "rspec/core/rake_task"
 
-RSpec::Core::RakeTask.new(:spec)
+  desc "Run specs"
+  RSpec::Core::RakeTask.new(:spec)
 
-require "rubocop/rake_task"
+  task test: :spec
+  task default: %i[test]
+rescue LoadError
+  # Ok
+end
 
-RuboCop::RakeTask.new
+begin
+  require "rubocop/rake_task"
 
-task default: %i[spec rubocop]
+  RuboCop::RakeTask.new
+rescue LoadError
+  # Ok
+end
+
+begin
+  require "yard"
+
+  YARD::Rake::YardocTask.new
+
+  task :docs do
+    `yard server --reload`
+  end
+rescue LoadError
+  # Ok
+end

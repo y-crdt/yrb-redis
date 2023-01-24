@@ -1,6 +1,31 @@
 module Y
   module Redis
-    VERSION: String
     # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+
+    VERSION: String
+
+    self.@config: Config
+
+    @client: untyped
+    @lock_manager: untyped
+
+    def self.configuration: -> Config
+
+    alias self.config self.configuration
+
+    def self.configure: -> void
+
+    attr_reader client: untyped
+    attr_reader lock_manager: untyped
+
+    def load: -> ::Array[Integer]?
+
+    def save: -> void
+
+    private
+
+    def decode: (update: String) -> ::Array[Integer]
+
+    def encode: (data: ::Array[Integer]) -> String
   end
 end

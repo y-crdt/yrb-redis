@@ -1,0 +1,9 @@
+module Y
+  module Redis
+    module Config
+      module Validations
+        def validate!: -> bool
+      end
+    end
+  end
+end

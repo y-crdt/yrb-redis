@@ -1,3 +1,5 @@
-example_id                  | status | run_time        |
---------------------------- | ------ | --------------- |
-./spec/y/redis_spec.rb[1:1] | passed | 0.00042 seconds |
+example_id                    | status | run_time        |
+----------------------------- | ------ | --------------- |
+./spec/y/redis_spec.rb[1:1]   | passed | 0.01986 seconds |
+./spec/y/redis_spec.rb[1:2:1] | passed | 0.01909 seconds |
+./spec/y/redis_spec.rb[1:2:2] | passed | 0.00759 seconds |

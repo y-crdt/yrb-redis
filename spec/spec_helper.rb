@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
+require "redis"
+require "redlock"
+require "y-rb"
 require "y/redis"
+require_relative "./helpers/redis_helper"
+require_relative "./helpers/redlock_helper"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,4 +17,7 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include Helpers::RedisHelper, :redis
+  config.include Helpers::RedlockHelper, :redlock
 end

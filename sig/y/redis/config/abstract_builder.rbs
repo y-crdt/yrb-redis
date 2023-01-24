@@ -1,0 +1,13 @@
+module Y
+  module Redis
+    module Config
+      class AbstractBuilder
+        @config: Config
+
+        attr_reader config: Config
+
+        def build: -> Config
+      end
+    end
+  end
+end
