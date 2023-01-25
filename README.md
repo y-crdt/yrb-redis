@@ -1,3 +1,9 @@
+<p align="center">
+  <img alt="Yrb" src="./docs/assets/logo.png" width="300" />
+</p>
+
+---
+
 # yrb-redis
 
 > A Redis companion for y-rb
